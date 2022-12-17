@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="container">
+        <div class="section">
+            <div class="logo">
+                <img src="clock_logo.png">
+            </div>
+            
+            <div class="alarm_set">
+
+                <div class="alarm__container">
+                    <img src="./wake_up.svg" >
+                    <div class="alarm__set__text">Set wake up time</div>
+                    <select class="alarm__dropdown" id="wakeup__dropdown">
+                        <option>8AM - 9AM</option>
+                        <option>9AM - 10AM</option>
+                        <option>10AM - 11AM</option>
+                        <option>11AM - 12PM</option>
+                    </select>
+                </div>
+                <div class="line"></div>
+
+                <div class="alarm__container">
+                    <img src="./lunch_time.svg" >
+                    <div class="alarm__set__text">Set lunch time</div>
+                    <select class="alarm__dropdown" id="lunch__dropdown">
+                        <option>12PM - 1PM</option>
+                        <option>1PM - 2PM</option>
+                        <option>2PM - 3PM</option>
+                        <option>3PM - 4PM</option>
+                    </select>
+                </div>
+                <div class="line"></div>
+
+                <div class="alarm__container">
+                    <img src="./nap_time.svg" >
+                    <div class="alarm__set__text">Set nap time</div>
+                    <select class="alarm__dropdown" id="nap__dropdown">
+                        <option>4PM - 5PM</option>
+                        <option>5PM - 6PM</option>
+                        <option>6PM - 7PM</option>
+                        <option>7PM - 8PM</option>
+                    </select>
+                </div>
+                <div class="line"></div>
+
+                <div class="alarm__container">
+                    <!-- <img src="./nap_time.svg" > -->
+                    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+                        rel="stylesheet">
+                    <span class="material-icons" style="color: #3D087B ;">bedtime</span>
+                    <div class="alarm__set__text">Set night time</div>
+                    <select class="alarm__dropdown" id="night__dropdown">
+                        <option>8PM - 8AM</option>
+                        <option>9PM - 8AM</option>
+                        <option>10PM - 8AM</option>
+                        <option>11PM - 8AM</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="alarm_message">
+               <span class="text__msg" id="alarm__text">GOOD MORNING!! WAKE UP !!</span> 
+            </div>
+            <div class="d-flex">
+                <div class="set_alarm_btn" onclick="setAlarm()"><span>Set Alarm</span></div>
+                <div class="time__section">
+                    <span>Wake Up Time : <span id="time__section__wakeup">8AM - 9AM</span></span>
+                    <span>Lunch Time : <span id="time__section__lunch">12PM - 1PM</span> </span>
+                    <span>Nap Time : <span id="time__section__nap">4PM - 5PM</span> </span>
+                    <span>Night Time : <span id="time__section__night">8PM - 8AM</span</span>
+                </div>
+            </div>
+        </div>
+        
+       <div class="section">
+            <div class="height">
+                    <div class="digital__clock__section">
+                        <div class="time">TIME</div>
+                        <div class="pink__background time__text">
+                            <span id="hour">10</span>
+                            <span class="time__text2">hours</span>
+                        </div>
+                        <div class="dot">:</div>
+                        <div class="pink__background time__text">
+                            <span id="minute">00</span>
+                            <span class="time__text2">mins</span>
+                        </div>
+                        <div class="dot">:</div>
+                        <div class="pink__background time__text">
+                            <span id="second">01</span>
+                            <span class="time__text2">secs</span>
+                        </div>
+                        <div class="am__pm time__text" id="amPm">AM</div>
+                    </div>
+                        <div class="first__shadow"></div>
+                        <div class="second__shadow"></div>
+            </div>
+                    <div class="text__msg4" id="alarm__msg">
+                        GRAB SOME HEALTHY BREAKFAST!!!
+                    </div>
+
+                    <div class="image" id="display__image"></div>
+                        
+        </div>            
+    </div> 
+    <script src="index.js"></script>      
+</body>
+</html>
