@@ -7,14 +7,30 @@ function showTime() {
     let sec = time.getSeconds();
     am_pm = "AM";
  
-    if (hour > 12) {
+    if (hour >= 12) {
         hour = hour - 12;
         am_pm = "PM";
     }
-    // if (hour == 0) {
-    //     hr = 12;
-    //     am_pm = "AM";
-    // }
+
+    if((hour >=7  && am_pm === "AM")){
+    document.getElementById("alarm__text").innerHTML = "GOOD MORNING!! WAKE UP !!";
+    document.getElementById("alarm__msg").innerHTML = "GRAB SOME HEALTHY BREAKFAST!!!";
+    document.getElementById("display__image").style.backgroundImage =  "url('wakeup-image.svg')";
+    }else if((hour >=0 && hour <=4 && am_pm === "PM")){
+        document.getElementById("alarm__text").innerHTML = "GOOD AFTERNOON!! TAKE SOME SLEEP";
+        document.getElementById("alarm__msg").innerHTML = "GRAB SOME HEALTHY BREAKFAST!!!";
+        document.getElementById("display__image").style.backgroundImage =  "url('Group 5183.svg')";
+    }else if(hour>4 && hour <=7 && am_pm === "PM" ){
+        document.getElementById("alarm__text").innerHTML = "GOOD EVENING !!";
+        document.getElementById("alarm__msg").innerHTML = "STOP YAWNING, GET SOME TEA.. ITS JUST EVENING!";
+        document.getElementById("display__image").style.backgroundImage =  "url('evening.png')";
+    } else {
+document.getElementById("alarm__text").innerHTML = "GOOD NIGHT !!";
+document.getElementById("alarm__msg").innerHTML = "CLOSE YOUR EYES AND GO TO SLEEP";
+document.getElementById("display__image").style.backgroundImage =  "url('night.svg')";
+
+    }
+  
 
     hour = hour < 10 ? "0" + hour : hour;
     min = min < 10 ? "0" + min : min;
@@ -28,33 +44,9 @@ function showTime() {
             .innerHTML = sec;
             document.getElementById("amPm").innerHTML = am_pm;
 
-            let wake_up_value = document.getElementById("time__section__wakeup").innerHTML;
-            let lunch_value = document.getElementById("time__section__lunch").innerHTML;
-            let nap_value = document.getElementById("time__section__nap").innerHTML;
-            let night_value = document.getElementById("time__section__night").innerHTML;
+    
 
-            hour= hour.toString();
-            let currentHour = hour.startsWith("0") ? hour.slice(1) : hour;
-            currentHour = currentHour + am_pm;
 
-            if(wake_up_value.split("-")[0].trim() === currentHour){
-                document.getElementById("alarm__text").innerHTML = "GOOD MORNING!! WAKE UP !!";
-                document.getElementById("alarm__msg").innerHTML = "GRAB SOME HEALTHY BREAKFAST!!!";
-                document.getElementById("display__image").style.backgroundImage =  "url('./morning.svg')";
-            }else if(lunch_value.split("-")[0].trim() === currentHour){
-                document.getElementById("alarm__text").innerHTML = "GOOD AFTERNOON!! TAKE SOME SLEEP";
-                document.getElementById("alarm__msg").innerHTML = "GRAB SOME HEALTHY BREAKFAST!!!";
-                document.getElementById("display__image").style.backgroundImage =  "url('./afternoon.png')";
-            }else if(nap_value.split("-")[0].trim() === currentHour){
-                document.getElementById("alarm__text").innerHTML = "GOOD EVENING !!";
-                document.getElementById("alarm__msg").innerHTML = "STOP YAWNING, GET SOME TEA.. ITS JUST EVENING!";
-                document.getElementById("display__image").style.backgroundImage =  "url('./evening.png')";
-            } else if(parseInt(currentHour.slice(0,-2)) >= 8 && am_pm==="PM" || parseInt(currentHour.slice(0,-2)) <= 8 && am_pm==="AM"){
-                document.getElementById("alarm__text").innerHTML = "GOOD NIGHT !!";
-                document.getElementById("alarm__msg").innerHTML = "CLOSE YOUR EYES AND GO TO SLEEP";
-                document.getElementById("display__image").style.backgroundImage =  "url('./night.svg')";
-
-            }
 
 }
 showTime();
