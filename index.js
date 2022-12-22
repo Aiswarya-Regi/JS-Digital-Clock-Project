@@ -23,7 +23,7 @@ function showTime() {
     }else if(hour>4 && hour <=7 && am_pm === "PM" ){
         document.getElementById("alarm__text").innerHTML = "GOOD EVENING !!";
         document.getElementById("alarm__msg").innerHTML = "STOP YAWNING, GET SOME TEA.. ITS JUST EVENING!";
-        document.getElementById("display__image").style.backgroundImage =  "url('evng.png')";
+        document.getElementById("display__image").style.backgroundImage =  "url('evening.png')";
     } else {
 document.getElementById("alarm__text").innerHTML = "GOOD NIGHT !!";
 document.getElementById("alarm__msg").innerHTML = "CLOSE YOUR EYES AND GO TO SLEEP";
