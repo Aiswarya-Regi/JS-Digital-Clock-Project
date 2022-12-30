@@ -19,7 +19,7 @@ function showTime() {
     }else if((hour >=0 && hour <=4 && am_pm === "PM")){
         document.getElementById("alarm__text").innerHTML = "GOOD AFTERNOON!! TAKE SOME SLEEP";
         document.getElementById("alarm__msg").innerHTML = "GRAB SOME HEALTHY BREAKFAST!!!";
-        document.getElementById("display__image").style.backgroundImage =  "url('lunch_time.svg')";
+        document.getElementById("display__image").style.backgroundImage =  "url('afternoon.svg')";
     }else if(hour>4 && hour <=7 && am_pm === "PM" ){
         document.getElementById("alarm__text").innerHTML = "GOOD EVENING !!";
         document.getElementById("alarm__msg").innerHTML = "STOP YAWNING, GET SOME TEA.. ITS JUST EVENING!";
